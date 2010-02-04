@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Igt.Adv.Patron.RollOnceListener", "Igt.Adv.Patron.RollOnceListener.csproj", "{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_rolloncelogger", "test_rolloncelogger\test_rolloncelogger.csproj", "{D621548A-3391-4EF7-8915-BAF26D10CE3A}"
+EndProject
+Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = RollOnceListener.vsmdi
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D621548A-3391-4EF7-8915-BAF26D10CE3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D621548A-3391-4EF7-8915-BAF26D10CE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D621548A-3391-4EF7-8915-BAF26D10CE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D621548A-3391-4EF7-8915-BAF26D10CE3A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
