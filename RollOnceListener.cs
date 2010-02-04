@@ -27,18 +27,18 @@ namespace Igt.Adv.Patron.Logging.Configuration
 	using IBuilderContext = Microsoft.Practices.ObjectBuilder2.IBuilderContext;
 	
 	/** this creates the tracelistener from the configuration data. */
-	public class RollOnceListenerAssembler : TraceListenerAssembler
+	public class RollOnceTraceListenerAssembler : TraceListenerAssembler
 	{
 		public override TraceListener Assemble(IBuilderContext context, TraceListenerData configData, 
 																					 IConfigurationSource configurationSource, 
 																					 ConfigurationReflectionCache reflectionCache)
 		{
-			RollOnceListenerData rolConfigData = configData as RollOnceListenerData;
+			RollOnceTraceListenerData rolConfigData = configData as RollOnceTraceListenerData;
 			
 			ILogFormatter formatter = 
 				GetFormatter(context, rolConfigData.Formatter, configurationSource, reflectionCache);
 			
-			TraceListener createdObject	= new Igt.Adv.Patron.Logging.TraceListeners.RollOnceListener(
+			TraceListener createdObject	= new Igt.Adv.Patron.Logging.TraceListeners.RollOnceTraceListener(
 			                                                                  rolConfigData.Name,
 																																				rolConfigData.FileName,
 																																				rolConfigData.Header,
@@ -51,8 +51,8 @@ namespace Igt.Adv.Patron.Logging.Configuration
 	}
 	
 	/** this tells the config tool what to do with itself when someone wants to create a RollOnceListner. */
-	[Assembler(typeof(RollOnceListenerAssembler))]
-	public class RollOnceListenerData : TraceListenerData
+	[Assembler(typeof(RollOnceTraceListenerAssembler))]
+	public class RollOnceTraceListenerData : TraceListenerData
 	{
 		private const string _fileNameProp = "fileName";
 		private const string _headerProp = "header";
@@ -61,16 +61,16 @@ namespace Igt.Adv.Patron.Logging.Configuration
 		private const string _rollDirProp = "rollDirection";
 		private const string _maxLogsProp = "maxLogs";
 		
-		public RollOnceListenerData() { }
+		public RollOnceTraceListenerData() { }
 		
-		public RollOnceListenerData(string name, 
+		public RollOnceTraceListenerData(string name, 
 																string filename, 
 																string header, 
 																string footer, 
 																int maxLogs,
 																string formatterName,
 																TraceOptions traceOutputOptions)
-			: base(name, typeof(TraceListeners.RollOnceListener), traceOutputOptions)
+			: base(name, typeof(TraceListeners.RollOnceTraceListener), traceOutputOptions)
 		{
 			this.FileName = filename;
 			this.Header = header;
@@ -79,14 +79,14 @@ namespace Igt.Adv.Patron.Logging.Configuration
 			this.Formatter = formatterName;
 		}
 		
-		public RollOnceListenerData(string name, 
+		public RollOnceTraceListenerData(string name, 
 																string filename,
 																string header, 
 																string footer, 
 																int maxLogs,
 																string formatterName,
 																SourceLevels filter)
-			: base(name, typeof(TraceListeners.RollOnceListener), TraceOptions.None, filter)
+			: base(name, typeof(TraceListeners.RollOnceTraceListener), TraceOptions.None, filter)
 		{
 			this.FileName = filename;
 			this.Header = header;
@@ -137,22 +137,22 @@ namespace Igt.Adv.Patron.Logging.TraceListeners
 	using IntList = System.Collections.Generic.List<int>;
 	using EnvHelper = Microsoft.Practices.EnterpriseLibrary.Logging.TraceListeners.EnvironmentHelper;
 	
-	[ConfigurationElementType(typeof(Configuration.RollOnceListenerData))]
-	public class RollOnceListener : FlatFileTraceListener
+	[ConfigurationElementType(typeof(Configuration.RollOnceTraceListenerData))]
+	public class RollOnceTraceListener : FlatFileTraceListener
 	{
 		private int _maxLogs = 10;
 		private bool _rolled = false;
 		
-		public RollOnceListener() : base() { }
+		public RollOnceTraceListener() : base() { }
 		
-		public RollOnceListener(string name, string filename, string header, string footer, ILogFormatter formatter, int maxLogs)
+		public RollOnceTraceListener(string name, string filename, string header, string footer, ILogFormatter formatter, int maxLogs)
 			: base(filename, header, footer, formatter)
 		{
 			this.Name = name;
 			_maxLogs = maxLogs;
 		}
 		
-		public RollOnceListener(string filename, ILogFormatter formatter)
+		public RollOnceTraceListener(string filename, ILogFormatter formatter)
 			: base(filename)
 			{ }
 		
