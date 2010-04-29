@@ -1,10 +1,15 @@
 ﻿using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using Microsoft.Practices.EnterpriseLibrary.Configuration.Design;
+using Igt.Adv.Patron.Logging.Configuration.Design;
 
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
+
+[assembly : ConfigurationDesignManager(typeof(PatronLoggingConfigManager))]
+
 [assembly: AssemblyTitle("RollOnceListener.Design")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
