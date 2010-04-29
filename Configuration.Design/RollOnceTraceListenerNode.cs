@@ -97,6 +97,14 @@ namespace Igt.Adv.Patron.Logging.Configuration.Design
 				get { return _footer; }
 				set { _footer = value; }
 			}
+			
+		[SRDescription("RollOnceTraceListenerMaxLogs", typeof(Resources))]
+		[SRCategory("CategoryGeneral", typeof(Resources))]
+		public int MaxLogs
+		{
+			get { return _maxLogs; }
+			set { _maxLogs = value; }
+		}
 
 		/// <summary>
 		/// Gets or sets the formatter for the file.

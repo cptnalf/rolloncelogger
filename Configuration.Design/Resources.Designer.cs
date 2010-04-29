@@ -116,6 +116,15 @@ namespace Igt.Adv.Patron.Logging.Configuration.Design {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Max number of logs to store.
+        /// </summary>
+        internal static string RollOnceTraceListenerMaxLogs {
+            get {
+                return ResourceManager.GetString("RollOnceTraceListenerMaxLogs", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to RollOnce Trace Listener.
         /// </summary>
         internal static string RollOnceTraceListenerNode {

@@ -136,6 +136,9 @@ Optional</value>
   <data name="RollOnceTraceListenerHeader" xml:space="preserve">
     <value>Header to append before each log entry.</value>
   </data>
+  <data name="RollOnceTraceListenerMaxLogs" xml:space="preserve">
+    <value>Max number of logs to store</value>
+  </data>
   <data name="RollOnceTraceListenerNode" xml:space="preserve">
     <value>RollOnce Trace Listener</value>
   </data>
