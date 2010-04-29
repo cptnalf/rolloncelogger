@@ -10,9 +10,15 @@ using Igt.Adv.Patron.Logging.Configuration.Design;
 
 [assembly : ConfigurationDesignManager(typeof(PatronLoggingConfigManager))]
 
-[assembly: AssemblyTitle("RollOnceListener.Design")]
+[assembly: AssemblyTitle("Igt Logger Design")]
 [assembly: AssemblyDescription("")]
-[assembly: AssemblyConfiguration("")]
+
+#if DEBUG
+[assembly: AssemblyConfiguration("Debug")]
+#else
+[assembly: AssemblyConfiguration("Release")]
+#endif
+
 [assembly: AssemblyCompany("IGT")]
 [assembly: AssemblyProduct("RollOnceListener.Design")]
 [assembly: AssemblyCopyright("Copyright © IGT 2010")]

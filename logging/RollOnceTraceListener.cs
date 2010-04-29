@@ -36,6 +36,7 @@ namespace Igt.Adv.Patron.Logging.TraceListeners
 		public RollOnceTraceListener(string name, string filename, string header, string footer, ILogFormatter formatter, int maxLogs)
 			: base(filename, header, footer, formatter)
 		{
+			this.Writer = new System.IO.StringWriter();
 			this.Name = name;
 			_maxLogs = maxLogs;
 		}

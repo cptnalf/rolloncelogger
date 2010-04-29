@@ -142,4 +142,10 @@ Optional</value>
   <data name="RollOnceTraceListenerNode" xml:space="preserve">
     <value>RollOnce Trace Listener</value>
   </data>
+	<data name="RollOnceTraceListenerCmdNodeText" xml:space="preserve">
+		<value>Roll Once Trace Listener</value>
+	</data>
+	<data name="RollOnceTraceListenerCmdNodeTextLong" xml:space="preserve">
+		<value>Roll Once Trace Listener</value>
+	</data>
 </root>

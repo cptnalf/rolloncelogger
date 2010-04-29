@@ -79,6 +79,24 @@ namespace Igt.Adv.Patron.Logging.Configuration.Design {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Roll Once Trace Listener.
+        /// </summary>
+        internal static string RollOnceTraceListenerCmdNodeText {
+            get {
+                return ResourceManager.GetString("RollOnceTraceListenerCmdNodeText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roll Once Trace Listener.
+        /// </summary>
+        internal static string RollOnceTraceListenerCmdNodeTextLong {
+            get {
+                return ResourceManager.GetString("RollOnceTraceListenerCmdNodeTextLong", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to All Files (*.*)|*.*.
         /// </summary>
         internal static string RollOnceTraceListenerFileDialogFilter {
