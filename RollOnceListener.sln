@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Igt.Adv.Patron.RollOnceListener", "Igt.Adv.Patron.RollOnceListener.csproj", "{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test_rolloncelogger", "test_rolloncelogger\test_rolloncelogger.csproj", "{D621548A-3391-4EF7-8915-BAF26D10CE3A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RollOnceListener.Configuration.Design", "RollOnceListener.Design\RollOnceListener.Configuration.Design.csproj", "{2CFA7D34-CD7A-4C21-89B9-F09760406597}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Igt.Adv.Patron.Logging", "logging\Igt.Adv.Patron.Logging.csproj", "{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Igt.Adv.Patron.Logging.Configuration.Design", "Configuration.Design\Igt.Adv.Patron.Logging.Configuration.Design.csproj", "{2CFA7D34-CD7A-4C21-89B9-F09760406597}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +13,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D621548A-3391-4EF7-8915-BAF26D10CE3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D621548A-3391-4EF7-8915-BAF26D10CE3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D621548A-3391-4EF7-8915-BAF26D10CE3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D621548A-3391-4EF7-8915-BAF26D10CE3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}.Release|Any CPU.Build.0 = Release|Any CPU
 		{2CFA7D34-CD7A-4C21-89B9-F09760406597}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2CFA7D34-CD7A-4C21-89B9-F09760406597}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2CFA7D34-CD7A-4C21-89B9-F09760406597}.Release|Any CPU.ActiveCfg = Release|Any CPU

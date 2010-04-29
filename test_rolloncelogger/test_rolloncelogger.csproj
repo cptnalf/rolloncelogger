@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+		<OutputPath>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,22 +25,22 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+		<OutputPath>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+      <SpecificVersion>True</SpecificVersion>
       <HintPath>d:\rnotfsat\IGT_0803\dev_adv_cr\EGS\shared\tools\Microsoft Enterprise Library 4.1 - October 2008\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration.Design, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+      <SpecificVersion>True</SpecificVersion>
       <HintPath>d:\rnotfsat\IGT_0803\dev_adv_cr\EGS\shared\tools\Microsoft Enterprise Library 4.1 - October 2008\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+      <SpecificVersion>True</SpecificVersion>
       <HintPath>d:\rnotfsat\IGT_0803\dev_adv_cr\EGS\shared\tools\Microsoft Enterprise Library 4.1 - October 2008\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -66,12 +66,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Igt.Adv.Patron.RollOnceListener.csproj">
-      <Project>{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}</Project>
-      <Name>Igt.Adv.Patron.RollOnceListener</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

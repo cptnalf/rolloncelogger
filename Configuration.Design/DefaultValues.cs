@@ -1,5 +1,5 @@
 
-namespace Igt.Adv.Patron.RollOnceListener.Configuration.Design
+namespace Igt.Adv.Patron.Logging.Configuration.Design
 {
 	internal static class DefaultValues
 	{

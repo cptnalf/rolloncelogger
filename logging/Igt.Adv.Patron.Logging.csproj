@@ -9,15 +9,17 @@
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Igt.Adv.Patron.Logging</RootNamespace>
-    <AssemblyName>Igt.Adv.Patron.RollOnceListener</AssemblyName>
+    <AssemblyName>Igt.Adv.Patron.Logging</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>EGS.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,22 +27,22 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+      <SpecificVersion>True</SpecificVersion>
       <HintPath>..\..\..\rnotfsat\IGT_0803\dev_adv_cr\EGS\shared\tools\Microsoft Enterprise Library 4.1 - October 2008\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Configuration.Design, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+      <SpecificVersion>True</SpecificVersion>
       <HintPath>..\..\..\rnotfsat\IGT_0803\dev_adv_cr\EGS\shared\tools\Microsoft Enterprise Library 4.1 - October 2008\Microsoft.Practices.EnterpriseLibrary.Configuration.Design.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Logging, Version=4.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+      <SpecificVersion>True</SpecificVersion>
       <HintPath>..\..\..\rnotfsat\IGT_0803\dev_adv_cr\EGS\shared\tools\Microsoft Enterprise Library 4.1 - October 2008\Microsoft.Practices.EnterpriseLibrary.Logging.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
@@ -50,6 +52,10 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Management.Instrumentation">
       <RequiredTargetFramework>3.5</RequiredTargetFramework>
     </Reference>
     <Reference Include="System.Xml.Linq">
@@ -62,8 +68,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RollOnceListener.cs" />
+    <Compile Include="RollOnceTraceListener.cs" />
+    <Compile Include="Configuration\RollOnceTraceListenerAssembler.cs" />
+    <Compile Include="Configuration\Manageability\rolloncetracelistenerdatamanageabilityprovider.cs" />
+    <Compile Include="Configuration\Manageability\rolloncetracelistenerdatawmimapper.cs" />
+    <Compile Include="Configuration\Manageability\rolloncetracelistenersetting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EGS.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

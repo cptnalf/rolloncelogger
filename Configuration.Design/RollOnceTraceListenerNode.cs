@@ -7,7 +7,7 @@ using Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.Design.Formatt
 using System.Diagnostics;
 using System;
 
-namespace Igt.Adv.Patron.RollOnceListener.Configuration.Design
+namespace Igt.Adv.Patron.Logging.Configuration.Design
 {
 	using TraceListenerNode = Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.Design.TraceListeners.TraceListenerNode;
 	using TraceListenerData = Microsoft.Practices.EnterpriseLibrary.Logging.Configuration.TraceListenerData;

@@ -8,16 +8,18 @@
     <ProjectGuid>{2CFA7D34-CD7A-4C21-89B9-F09760406597}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Igt.Adv.Patron.RollOnceListener.Configuration.Design</RootNamespace>
-    <AssemblyName>Igt.Adv.Patron.RollOnceListener.Configuration.Design</AssemblyName>
+    <RootNamespace>Igt.Adv.Patron.Logging.Configuration.Design</RootNamespace>
+    <AssemblyName>Igt.Adv.Patron.Logging.Configuration.Design</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>EGS.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
+    <OutputPath>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -25,7 +27,7 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
+    <OutputPath>$(SolutionDir)\bin\$(Platform)\$(Configuration)\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -61,10 +63,10 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
     </Compile>
-    <Compile Include="RollOnceListenerNode.cs" />
+    <Compile Include="RollOnceTraceListenerNode.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Igt.Adv.Patron.RollOnceListener.csproj">
+    <ProjectReference Include="..\logging\Igt.Adv.Patron.Logging.csproj">
       <Project>{58EDBCFD-679C-4F00-BC41-9F24E4C49AFC}</Project>
       <Name>Igt.Adv.Patron.RollOnceListener</Name>
     </ProjectReference>
@@ -74,6 +76,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="EGS.snk" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
