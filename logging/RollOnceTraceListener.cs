@@ -36,7 +36,7 @@ namespace Igt.Adv.Patron.Logging.TraceListeners
 		public RollOnceTraceListener(string name, string filename, string header, string footer, ILogFormatter formatter, int maxLogs)
 			: base(filename, header, footer, formatter)
 		{
-			this.Writer = new System.IO.StringWriter();
+			//this.Writer = new System.IO.StringWriter();
 			this.Name = name;
 			_maxLogs = maxLogs;
 		}
@@ -60,13 +60,37 @@ namespace Igt.Adv.Patron.Logging.TraceListeners
 			 *  
 			 */
 			
+			/* so now i have 'foo.log' and 'c:\flarg\blarg\' */
+			string currentName = ((FileStream)((StreamWriter)this.Writer).BaseStream).Name;
+			
+			
+			/* here's a few situations:
+			 *
+			 * 1) no files: textwritertracelistener => opens a new file (0 bytes)
+			 * 2) existing files: opens the existing file (>0 bytes)
+			 * 3) existing file, but empty: opens existing file (0 bytes)
+			 * 
+			 * worst-case
+			 * file-header is printed BEFORE 'tracedata' is called.
+			 *
+			 */
+			FileInfo f = new FileInfo(currentName);
+			if (f.Length > 0)
+				{ 
+					f = null;
+					_rotate(currentName); 
+				}
+			
+			_rolled = true;
+		}			
+		
+		private void _rotate(string currentName)
+		{
 			string[] files = null;
 			string basename;
 			string name;
 			string pattern;
 			
-			/* so now i have 'foo.log' and 'c:\flarg\blarg\' */
-			string currentName = ((FileStream)((StreamWriter)this.Writer).BaseStream).Name;
 			name = Path.GetFileName(currentName);
 			basename = currentName.Substring(0, currentName.Length - name.Length);
 			
@@ -189,7 +213,6 @@ namespace Igt.Adv.Patron.Logging.TraceListeners
 			
 			/* let the base class do the file-opening... */
 			this.Writer = null;
-			_rolled = true;
 		}
 		
 		public override void TraceData(TraceEventCache eventCache, 

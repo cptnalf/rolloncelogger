@@ -10,6 +10,7 @@ namespace test_rolloncelogger
 	{
 		static void Main(string[] args)
 		{
+			Console.WriteLine("begin");
 			MSLog.Write("flarg", "General");
 			
 			MSLog.Write("a;lskdf;alksdjf", "General");
